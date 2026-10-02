@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://dut2bsx8a8gwd"]
+
+[ext_resource type="Texture2D" uid="uid://6ev7fkess0s" path="res://echoes-game/assets/sprites/idle_swith_sword-Sheet.png" id="1_bmmfk"]
+[ext_resource type="Script" uid="uid://c1mlw0sunekuw" path="res://echoes-game/scripts/animated_sprite_2d.gd" id="2_8gjg5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gjg5"]
+atlas = ExtResource("1_bmmfk")
+region = Rect2(0, 0, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eg3s"]
+atlas = ExtResource("1_bmmfk")
+region = Rect2(64, 0, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3xh4"]
+atlas = ExtResource("1_bmmfk")
+region = Rect2(128, 0, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmouo"]
+atlas = ExtResource("1_bmmfk")
+region = Rect2(192, 0, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p003u"]
+atlas = ExtResource("1_bmmfk")
+region = Rect2(256, 0, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an586"]
+atlas = ExtResource("1_bmmfk")
+region = Rect2(320, 0, 64, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xudjy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gjg5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eg3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3xh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmouo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p003u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_an586")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_730m2"]
+radius = 16.0
+height = 94.0
+
+[node name="player" type="CharacterBody2D" unique_id=163368406]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1281006314]
+sprite_frames = SubResource("SpriteFrames_xudjy")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.82145095
+script = ExtResource("2_8gjg5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=660868376]
+shape = SubResource("CapsuleShape2D_730m2")
